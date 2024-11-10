@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Compressor and Resizer</title>
+  <link id="stylesheet" rel="stylesheet" href="style_default.css"> 
+</head>
+<body>
+
+<div class="container">
+  <h2>Image Compressor and Resizer</h2>
+
+  <div class="file-input-wrapper">
+    <input type="file" id="uploadImage" accept="image/*" class="file-input">  
+    <label for="uploadImage" id="fileNameLabel" class="file-input-label">Choose File</label>
+    <a id="cancelButton" class="cancelButtonClass">Cancel</a>
+  </div>
+  
+  
+  <div id="optionsContainer" style="display: none;">
+    <div id="selectOptions">
+      <label>
+        Resize Options:
+        <select id="resizeOption">
+          <option value="none">No Resize</option>
+          <option value="stretch">Stretch</option>
+          <option value="fill">Fill with Color</option>
+        </select>
+      </label>
+  
+      <br>
+      
+      <div id="resizelabels">
+        <label id="resizeSizeLabel">
+          Resize Width:
+          <input type="text" id="resizeWidth" placeholder="Width (px)">
+        </label>
+    
+        <br>
+        
+        <label id="resizeSizeLabel">
+          Resize Height:
+          <input type="text" id="resizeHeight" placeholder="Height (px)">
+        </label>
+    
+        <br>
+      </div>
+      
+      <label id="fillColorLabel" style="display: none;">
+        Fill Color:
+        <input type="color" id="fillColor" value="#ffffff">
+      </label>
+  
+      <label>
+        Compression Options:
+        <select id="compressionOption">
+          <option value="none">No Compression</option>
+          <option value="quality">Compression by Quality</option>
+          <option value="size">Compression by Output File Size (KB)</option>
+        </select>
+      </label>
+  
+      <br>
+      
+      <div id="comprssionlabels">
+        <label id="compressionQualityLabel">
+          Compression Quality (0-100):
+          <input type="number" id="compressionQuality" min="1" max="100" value="80">
+        </label>
+        
+        <label id="compressionSizeLabel" style="display: none;">
+          Desired Output Size (KB):
+          <input type="number" id="outputSize" min="1">
+        </label>
+      </div>
+      <br>
+    </div>
+    
+    <a id="processImage">Process Image</a>
+    <a id="downloadLink" style="display: none;" class="downloadButton">Download Image</a>
+  </div>
+  
+  <canvas id="canvas" style="display: none;"></canvas>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
